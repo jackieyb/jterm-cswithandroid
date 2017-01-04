@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         // Make sure to check your edge cases! How will you handle errors?
         // Your code here
         //
-        return "not yet implemented! cats rock!";
+        String result = mCountryCodes.get(query.toLowerCase());
+        return result;
     }
 
     private void readCountryCodesFile() {
@@ -68,13 +69,19 @@ public class MainActivity extends AppCompatActivity {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             // The first line is the header.
             reader.readLine();
-            String line = reader.readLine();
+            String line = reader.readLine().toLowerCase();
+            System.out.println(line);
             while (line != null) {
+                Log.d("Reading",line);
                 String[] parts = line.split(",");
+                Log.d("Result",parts.toString());
                 //
                 // Now we need to populate the mCountryCodes HashMap so we can use it for lookup!
                 // Your code here.
                 //
+                String key = parts[2];
+                String value = parts[1];
+                mCountryCodes.put(key,value);
                 line = reader.readLine();
             }
             inputStream.close();
