@@ -38,17 +38,30 @@ public class AnagramDictionary {
     private static final int DEFAULT_WORD_LENGTH = 3;
     private static final int MAX_WORD_LENGTH = 7;
     private Random random = new Random();
-
+    private ArrayList<String> wordList = new ArrayList<String>();
     private HashMap<String, ArrayList<String>> lettersToWord = new HashMap<>();
+    private HashSet<String> wordSet = new HashSet<String>();
 
     public AnagramDictionary(InputStream wordListStream) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(wordListStream));
         String line;
+
         while((line = in.readLine()) != null) {
             String word = line.trim();
             //
             //  Your code here
             //
+            wordList.add(word);
+            wordSet.add(word);
+            String sortedWord = sortLetters(word);
+            if (lettersToWord.containsKey(sortedWord)){
+                lettersToWord.get(sortedWord).add(word);
+            }else{
+                ArrayList<String> newList = new ArrayList<String>();
+                newList.add(word);
+                lettersToWord.put(sortedWord,newList);
+            }
+
         }
     }
 
@@ -56,7 +69,10 @@ public class AnagramDictionary {
         //
         // Your code here
         //
-        return true;
+        if (wordSet.contains(word)&&word.contains(base)==false){
+            return true;
+        }
+        return false;
     }
 
     public ArrayList<String> getAnagrams(String targetWord) {
@@ -64,6 +80,14 @@ public class AnagramDictionary {
         //
         // Your code here
         //
+        for (int i=0;i<wordList.size();i++){
+            if (targetWord.length() != wordList.get(i).length()){
+                return result;
+            }
+            if (sortLetters(targetWord)==sortLetters(wordList.get(i))){
+                result.add(wordList.get(i));
+            }
+        }
         return result;
     }
 
@@ -81,7 +105,10 @@ public class AnagramDictionary {
         //
         // Your code here
         //
-        return "";
+        Arrays.sort(chars);
+        String result = chars.toString();
+        System.out.print(result);
+        return result;
     }
 
     public ArrayList<String> getAnagramsWithOneMoreLetter(String word) {
@@ -89,6 +116,8 @@ public class AnagramDictionary {
         //
         // Your code here
         //
+
+
         return result;
     }
 
