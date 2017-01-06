@@ -93,21 +93,25 @@ public class AnagramDictionary {
 
     @VisibleForTesting
     static boolean isAnagram(String first, String second) {
-        //
-        // Your code here
-        //
-        return true;
+        // Check empty
+        if (first == null || first.equals("") || second == null || second.equals("")) {
+            return false;
+        }
+        // Check length
+        if (first.length() != second.length()) {
+            return false;
+        }
+        return sortLetters(first).equals(sortLetters(second));
     }
 
     @VisibleForTesting
     static String sortLetters(String input) {
         char[] chars = input.toCharArray();
-        //
-        // Your code here
-        //
         Arrays.sort(chars);
-        String result = chars.toString();
-        System.out.print(result);
+        String result = "";
+        for (char c : chars) {
+            result += c;
+        }
         return result;
     }
 

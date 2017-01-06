@@ -16,30 +16,47 @@
 
 package com.google.engedu.anagrams;
 
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
 import android.text.TextUtils;
 
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.modules.junit4.PowerMockRunner;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import android.util.Log;
+
 
 /**
  * Tests for AnagramDictionary
  */
-
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({Log.class})
 public class AnagramDictionaryTest {
-    @Test
-    public void testSortLetters() {
-        assertEquals(AnagramDictionary.sortLetters("a"), "a");
-    }
 
-    @Test
-    public void testIsAnagram() {
-        assertTrue(AnagramDictionary.isAnagram("a", "a"));
+    @Before
+    public void beforeEach() {
+        PowerMockito.mockStatic(Log.class);
     }
-
     @Test
-    public void testIsGoodWord() {
-       // TODO: This may need to be in AndroidTest
+    public void testAddition(){
+        assertEquals(3, 1+2);
+    }
+    @Test
+    public void sortedLetters(){
+        assertEquals("a", AnagramDictionary.sortLetters("a"));
+        assertEquals("opst",AnagramDictionary.sortLetters("stop"));
+        assertEquals("abcdefg",AnagramDictionary.sortLetters("abcedfg"));
+
+    }
+    @Test
+    public void isAnagram() {
+        assertEquals(true, AnagramDictionary.isAnagram("cat","act"));
+        assertEquals(true, AnagramDictionary.isAnagram("act","cat"));
+        assertEquals(false, AnagramDictionary.isAnagram("racecar","rec"));
+
     }
 }

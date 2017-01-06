@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
+
         //Roll button
         findViewById(R.id.b1).setOnClickListener(new View.OnClickListener() {
             @Override

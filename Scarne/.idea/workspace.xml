@@ -48,12 +48,12 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jterm/jaby/scarne/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
-                <element signature="e#1490#1491#0" expanded="true" />
-                <element signature="e#1558#1559#0" expanded="true" />
-                <element signature="e#1814#1815#0" expanded="true" />
-                <element signature="e#1849#1850#0" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1550#1551#0" expanded="true" />
+                <element signature="e#1806#1807#0" expanded="true" />
+                <element signature="e#1841#1842#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2163,7 +2163,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="69" y="228" width="1400" height="757" extended-state="0" />
+    <frame x="69" y="228" width="1400" height="757" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2222,12 +2222,12 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jterm/jaby/scarne/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#1490#1491#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1814#1815#0" expanded="true" />
-            <element signature="e#1849#1850#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1806#1807#0" expanded="true" />
+            <element signature="e#1841#1842#0" expanded="true" />
           </folding>
         </state>
       </provider>
